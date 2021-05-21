@@ -23,7 +23,7 @@
     <div class="row mt-5">
       <div class="col-lg-6 col-md-6 album-n">
         <div id="album-image-container" class="container m-0 p-1">
-          <img src="./assets/images/album-images/hey-jude.jpg" id="img-album-n" alt="" />
+          <!-- <img src="../assets/images/album-images/hey-jude.jpg" id="img-album-index" class="img-fluid" alt="" />
           <h4>Greatest Hits Collection (First Edition)</h4>
           <p>Beatles</p>
           <button class="btn btn-success btn-n">PLAY</button>
@@ -34,7 +34,7 @@
               <i class="fas fa-heart fa-stack-1x"></i>
             </span>
             <span><i class="fa fa-ellipsis-h mb-2"></i></span>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-lg-5 col-md-5 tracklist-n">
@@ -47,7 +47,7 @@
       </div>
     </div>
   </div>
-  <!-- <script src="../script.js"></script> -->
+  <script src="../script.js"></script>
   <script>
 
     const trackList = document.getElementById("tracks")
@@ -61,12 +61,14 @@
       
       
       let albums = []
+      let albumCover = []
       
       function loadAlbums(){
         fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
         .then((response) =>response.json())
         .then((_albums) =>{
           albums = _albums.tracks.data
+          albumCover = _albums.cover_big
           console.log(albums)
           displayAlbums()     
         })
@@ -82,8 +84,20 @@
       }
 
       function displayAlbumImage(){
-        const getImg = document.querySelector("album-image-container>img")
-        // getImg.i
+        imageContainer.innerHTML = ""
+        imageContainer.innerHTML = `<img src="${albumCover}" id="img-album-index" class="img-fluid" alt="" />
+          <h4>Greatest Hits Collection (First Edition)</h4>
+          <p>Beatles</p>
+          <button class="btn btn-success btn-n">PLAY</button>
+          <p>1970 &#8226 16 SONGS</p>
+          <div>
+            <span class="fa-stack mb-2" id="toggle">
+              <i class="far fa-heart fa-stack-1x"></i>
+              <i class="fas fa-heart fa-stack-1x"></i>
+            </span>
+            <span><i class="fa fa-ellipsis-h mb-2"></i></span>
+          </div>
+        `
 
         // imageContainer.
 
