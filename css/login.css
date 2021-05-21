@@ -1,0 +1,386 @@
+.spotify-container-index {
+  display: flex;
+  justify-content: center;
+}
+
+.header-index {
+  display: flex;
+  flex: center;
+  align-items: center;
+  justify-content: center;
+
+  margin: 15px;
+  padding: 10px;
+}
+
+.header-index img {
+  height: 60px;
+  margin-right: 5px;
+}
+
+.header-index h1 {
+  font-size: 40px;
+}
+
+/*All buttons styling login and album page*/
+.btn-index {
+  border-radius: 30px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.hr-sect {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  font-size: 12px;
+}
+
+.hr-sect::before,
+.hr-sect::after {
+  content: "";
+  flex-grow: 1;
+  background: rgba(0, 0, 0, 0.15);
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.hr-sect::before {
+  margin-right: 25px;
+}
+
+.hr-sect::after {
+  margin-left: 25px;
+}
+
+#btn-fb-index,
+#btn-apple-index,
+#btn-login-index,
+#btn-signup-index {
+  padding: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 30px;
+}
+
+#btn-fb-index {
+  background: #45599a;
+  color: white;
+}
+#btn-fb-index:hover {
+  background: #6774a1;
+  transform: scale(1.05);
+}
+
+#btn-apple-index {
+  background: black;
+  color: white;
+}
+#btn-apple-index:hover {
+  background: rgb(69, 69, 69);
+  transform: scale(1.05);
+}
+
+i {
+  margin-right: 15px;
+}
+
+#btn-login-index {
+  background: #47b850;
+  color: white;
+}
+
+#btn-login-index:hover {
+  background: rgb(130, 179, 135);
+  color: white;
+  transform: scale(1.05);
+}
+
+#btn-signup-index {
+  border: 3px solid !important;
+}
+#btn-signup-index:hover {
+  transform: scale(1.05);
+}
+
+#p-first-index {
+  margin: 0;
+}
+
+#p-dont-index {
+  font-size: 1.2rem;
+  margin-top: 40px;
+}
+
+#p-last-index {
+  color: grey;
+  font-size: 0.8rem;
+}
+
+#a-forgot-index,
+#a-terms-index,
+#a-privacy-index {
+  color: green !important;
+}
+
+/* Customize the label (the container) */
+#label-index {
+  display: block;
+  position: absolute;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  color: grey;
+  top: 35%;
+}
+
+/* Hide the browser's default checkbox */
+#label-index input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  padding-top: 50px;
+}
+
+/* Create a custom checkbox */
+.checkmark-index {
+  position: absolute;
+
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: rgb(177, 177, 177);
+  border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+#label-index:hover input ~ .checkmark-index {
+  background-color: rgb(231, 231, 231);
+  border: solid black 1px;
+}
+
+/* When the checkbox is checked, add a blue background */
+#label-index input:checked ~ .checkmark-index {
+  background-color: green;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-index:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+#label-index input:checked ~ .checkmark-index:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+#label-index .checkmark-index:after {
+  left: 7px;
+  top: 1px;
+  width: 7px;
+  height: 12px;
+  border: solid#FFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+@media screen and (max-width: 340px) {
+  #btn-fb-index,
+  #btn-apple-index,
+  #btn-login-index,
+  #btn-signup-index {
+    font-size: 13px;
+  }
+}
+
+/* -------------------------- Album Page start ------------------------- */
+/*-only body of albumpage-*/
+.body-AlbumPage {
+  background-color: #5d5d5d !important;
+  background-image: linear-gradient(132deg, #202020 0%, #050505 95%) !important;
+  overflow: hidden;
+  padding-top: 10px;
+  width: 100%;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.invisible-placeholder-n {
+  border: solid palegreen 2px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgb(20, 20, 20);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(22, 22, 22);
+  box-shadow: inset 0 0 6px rgba(90, 90, 90, 0.7);
+}
+
+/*---------tracklist column-----------------*/
+.tracklist-n {
+  height: 100vh;
+  padding-left: 2rem;
+  margin-left: 50px;
+}
+.track-container {
+  width: 100%;
+  overflow-y: scroll;
+  height: 80vh;
+}
+
+ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+li {
+  margin-bottom: 10px;
+  list-style: none !important;
+}
+
+li:nth-child(even) {
+  color: grey;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+li:nth-child(odd) {
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  font-weight: lighter;
+  margin: 0;
+}
+
+/*------------album cover column-------------*/
+
+#img-album-index {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+.album-n h4 {
+  letter-spacing: 1px;
+}
+
+.album-n {
+  display: flex;
+  color: white;
+  justify-content: center;
+  padding-left: 290px;
+  right: 0;
+  text-align: center;
+  height: 100vh;
+}
+
+.album-inndex p {
+  margin-top: 10px;
+  color: #5d5d5d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/*"play now button*/
+.album-n button {
+  margin-top: 10px !important;
+  width: 130px !important;
+  margin: 0 auto;
+}
+
+/*heart like styling*/
+.far .fa-heart {
+  font-size: 25px;
+}
+
+/*--------Screen sizing for albumpage---------------*/
+@media screen and (max-width: 1024px) {
+  .album-n {
+    margin-right: -50px;
+  }
+}
+.body-AlbumPage {
+  height: 50%;
+}
+
+@media screen and (max-width: 979px) {
+  .tracklist-n {
+    padding-left: 10px;
+  }
+
+  .body-n {
+    overflow: visible;
+  }
+
+  #img-album-n {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .album-n {
+    margin-right: -50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .album-n {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .body-n {
+    padding-right: 0px;
+  }
+
+  .tracklist-n {
+    padding-left: 10px;
+    margin-left: 0px;
+    font-size: 2rem !important;
+
+    height: 100%;
+  }
+
+  .track-container {
+    overflow: visible;
+    height: 100%;
+    padding-bottom: 160px;
+  }
+
+  .album-n {
+    height: 100%;
+    width: 100%;
+    min-width: 300px;
+    text-align: center;
+  }
+
+  #img-album-n {
+    min-width: 280px;
+  }
+}
+
+/*--------------------------------------------*/
+/*--------------Album Page End-------------------*/
