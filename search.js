@@ -1,5 +1,5 @@
 let searchData = [];
-let searchInput = document.querySelector("#search-input");
+/* let searchInput = document.querySelector("#search-input"); */
 
 // const urlParams = new URLSearchParams(window.location.search);
 
