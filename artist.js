@@ -6,7 +6,7 @@ window.onload=()=>{
 }
 
 const loadAlbums=()=>{
-    fetch( "https://striveschool-api.herokuapp.com/api/deezer/artist/2108/albums")
+    fetch( "https://striveschool-api.herokuapp.com/api/deezer/artist/1234/albums")
     .then(res=>res.json())
     .then(_Albums=>{
         /* console.log(_Albums.data) */
@@ -31,12 +31,39 @@ const displayArtists=()=>{
 
 
 
+    let searchedArtist = []
+
+const  searchedArtistDisplay=function(Albums) {
+    
+    artistCoverDiv.innerHTML=""
+    artistCoverDiv.innerHTML = Albums.map(Album => `<div class="col-12 col-sm-6 col-md-4 col-lg-2 px-2">
+    <div class="tile-card">
+       <a href="AlbumPage.html"> <img src="${album.cover_big}" class="img-fluid rounded"
+            alt="" /></a>
+        <div class="card-HomePage-title">${album.title}</div>
+    </div>
+</div>`)
+          .join("")
+  }
 
 
- /*  function displayAlbums(){
-    albums.forEach(
-      album=>trackList.innerHTML += 
-      <li><span class="fa-li"><i class="fas fa-music"></i></span></i>${album.title} You</li>
-        <li>${album.artist.name}</li>
+  
+const Search=function () {
+  
+    const searchInput = document.querySelector("#search-input")
+    console.log(searchInput)
+    const searchQuery = searchInput.value
+    console.log(searchInput.value)
+   console.log(searchedArtist)
+    const searchedArtistToBeDisplayed = searchedArtist.filter(Album => Album.title.toLowerCase().includes(searchQuery.toLowerCase())
     )
-  } */
+    console.log(searchedArtistToBeDisplayed)
+    
+    searchedArtistDisplay(searchedArtistToBeDisplayed)
+}
+
+
+
+
+
+ 
