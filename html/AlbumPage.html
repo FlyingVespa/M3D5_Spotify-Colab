@@ -21,7 +21,7 @@
   <div class="container-fluid m-0 p-0">
     <div class="row mt-5">
       <div class="col-lg-6 col-md-6 album-n">
-        <div class="container m-0 p-1">
+        <div id="album-image-container" class="container m-0 p-1">
           <img src="./assets/images/album-images/hey-jude.jpg" id="img-album-n" alt="" />
           <h4>Greatest Hits Collection (First Edition)</h4>
           <p>Beatles</p>
@@ -38,69 +38,58 @@
       </div>
       <div class="col-lg-5 col-md-5 tracklist-n">
         <div class="track-container">
-          <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>She Loves You</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>From Me to You </li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>We Can Work It Out </li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Help!</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Michelle</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Yesterday</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>I Feel Fine - Example of Long Text With No
-              Meaning Extra Extra</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Yellow Submarine - Example of Long Text With
-              No
-              Meaning Extra Extra</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Can't Buy Me Love</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Bad Boy</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Day Tripper</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>A Hard Day's Night - Example of Long Text
-              With
-              No Meaning Extra Extra</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Ticket To Ride - Example of Long Text With No
-              Meaning</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Paperback Writer - Example of Long Text With
-              No
-              Meaning</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Eleanor Rigby</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>I Want to Hold Your Hand - Example of Long
-              Text
-              With No Meaning</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Ticket To Ride</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Paperback Writer - Example of Long Text With
-              No
-              Meaning</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Eleanor Rigby</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>I Want to Hold Your Hand - Example of Long
-              Text
-              With No Meaning</li>
-            <li>Beatles</li>
-            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Ticket To Ride</li>
-            <li>Beatles</li>
+          <!-- track lists is appended below -->
+          <ul id="tracks" class="fa-ul">
+           
           </ul>
         </div>
       </div>
     </div>
   </div>
-  <script src="../script.js"></script>
+  <!-- <script src="../script.js"></script> -->
+  <script>
+
+    const trackList = document.getElementById("tracks")
+    const imageContainer = document.getElementById("album-image-container")
+
+    window.onload = ()=>{
+      loadAlbums()
+
+
+    }
+      
+      
+      let albums = []
+      
+      function loadAlbums(){
+        fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
+        .then((response) =>response.json())
+        .then((_albums) =>{
+          albums = _albums.tracks.data
+          console.log(albums)
+          displayAlbums()     
+        })
+        .catch((err) => console.log(err))
+      }
+      
+      function displayAlbums(){
+        albums.forEach(
+          album=>trackList.innerHTML += `
+          <li><span class="fa-li"><i class="fas fa-music"></i></span></i>${album.title} You</li>
+            <li>${album.artist.name}</li>`
+        )
+      }
+
+      function displayAlbumImage(){
+        // const getImg = document.querySelector("album-image-container>img")
+        // getImg.i
+
+        // imageContainer.
+
+
+      }
+
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -109,7 +98,7 @@
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
 </body>
-<script>
+<!-- <script>
          const getData = input => {
                 const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
                 fetch(apiUrl + input, {
@@ -147,6 +136,6 @@
             const someFunc = () => {
                 console.log("Hi mom!")
             }
-</script>
+</script> -->
 
 </html>
