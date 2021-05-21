@@ -9,42 +9,43 @@ const searchButtonFun = () => {
   )
     .then((res) => res.json())
     .then((data) => {
-      //   searchData = data.data
-      loadAlbums(data.data);
+      searchData = data.data;
+      // loadAlbums(data.data);
+      console(searchData);
     })
     .catch((error) => alert(error));
-};
+  // };
 
-const loadAlbums = (newData) => {
-  const divRow = document.querySelector(".albums");
-  newData.forEach((element) => {
-    divRow.innerHTML += `
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-            <div class="card mb-4">
-            <a href="${location.href.replace(
-              "search.html",
-              ""
-            )}album_page.html?id=${element.album.id}" class="text-center">
-              <img
-                src="${element.album.cover}"
-                alt="${element.album.id}"
-              />
-              </a>
-              <div class="card-body">
-                <p class="card-text text-center">
-                ${element.album.title}
-                </p>
-                <p class="card-text text-center card-artist"><a href="${location.href.replace(
-                  "search.html",
-                  ""
-                )}artist.html?id=${element.artist.id}">${
-      element.artist.name
-    }</a></p>
-              </div>
-            </div>
-          </div>
-        `;
-  });
+  // const loadAlbums = (newData) => {
+  //   const divRow = document.querySelector(".albums");
+  //   newData.forEach((element) => {
+  //     divRow.innerHTML += `
+  //           <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+  //             <div class="card mb-4">
+  //             <a href="${location.href.replace(
+  //               "HomePage.html",
+  //               ""
+  //             )}album_page.html?id=${element.album.id}" class="text-center">
+  //               <img
+  //                 src="${element.album.cover}"
+  //                 alt="${element.album.id}"
+  //               />
+  //               </a>
+  //               <div class="card-body">
+  //                 <p class="card-text text-center">
+  //                 ${element.album.title}
+  //                 </p>
+  //                 <p class="card-text text-center card-artist"><a href="${location.href.replace(
+  //                   "search.html",
+  //                   ""
+  //                 )}artist.html?id=${element.artist.id}">${
+  //       element.artist.name
+  //     }</a></p>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         `;
+  //   });
 };
 
 window.onload = () => {

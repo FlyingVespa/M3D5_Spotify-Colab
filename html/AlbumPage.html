@@ -110,44 +110,6 @@
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
 </body>
-<script>
-         const getData = input => {
-                const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
-                fetch(apiUrl + input, {
-                    method: "GET",
-                    headers: {
-                        "x-rapidapi-key": "f63820576cmshd99ae1c2eec0cfap1f5daajsne468be2e59ef",
-                        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
-                    }
-                })
-                    .then(response => response.json())
-                    .then(objects => {
-                        const parent = document.querySelector("#parent")
-                        for (const item of objects.data) {
-                            const container = document.createElement("div")
-                            container.classList.add("col")
-                            //container.classList.add("")
-                            const image = document.createElement("img")
-                            image.src = item.album.cover
-                            image.width = 120
-                            image.height = 120
-                            image.classList.add("img")
-                            container.appendChild(image)
-                            parent.appendChild(container)
-                        }
-                    })
-                    .catch(err => console.error("ERROR " + err))
-            }
-
-            const getDataRepeated = (input, repeats) => {
-                for (let i = 0; i < repeats; i++) {
-                    getData(input)
-                }
-            }
-
-            const someFunc = () => {
-                console.log("Hi mom!")
-            }
-</script>
-
+<scrip src="../js/Search.js"></scrip>
+<script src="../script.js"></script>
 </html>
