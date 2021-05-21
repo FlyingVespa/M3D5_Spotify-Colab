@@ -45,13 +45,25 @@ window.onload = () => {
   function Discover() {
     location.replace("Discover.html");
   }
+
+  // async function getData() {
+  //   const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
+  //   const response = await fetch(url, {
+  //     headers: {
+  //       "x-rapidapi-key": "f63820576cmshd99ae1c2eec0cfap1f5daajsne468be2e59ef",
+  //       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+  //     },
+  //   });
+  //   const data = await response.json();
+  //   if (response.ok) {
+  //     // console.log(data);
+  //   }
+  // }
+  // // getData();
 };
-const searchButtonFun = (e) => {
-  console.log(e);
-  //const searchField = e.target.parentElement.previousSibling.value;
-  // const divRow = document.querySelector(".albums");
-  //console.log(searchField);
-};
+
+function displayCode() {}
+
 // FAVOURITE HEART ICON TOGGLE
 // const icon = document.getElementById("toggle");
 // icon.addEventListener("click", (event) => {
