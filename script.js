@@ -1,5 +1,6 @@
-window.addEventListener("load", (event) => {
+window.onload = () => {
   console.log("page is fully loaded");
+
   fetch("../Navbar/navbar.html")
     .then((response) => {
       return response.text();
@@ -7,12 +8,18 @@ window.addEventListener("load", (event) => {
     .then((data) => {
       document.querySelector("navbar").innerHTML = data;
     });
+  // .then(() => {
+  //   console.log(document.querySelector("#search-btn"));
+  //   let input_s = document.querySelector("#search-btn");
+
+  //   input_s.addEventListener("click", (e) => searchButtonFun(e));
+  // });
 
   function insertPlayIcon() {
     let albumImages = document.getElementsByClassName("rounded");
     for (let i = 0; i < albumImages.length; i++) {
       let iconDiv = document.createElement("div");
-      iconDiv.className = "newPlay";
+      iconDiv.className.add("newPlay");
       iconDiv.innerHTML = `<i class="fas fa-play-circle"></i>`;
       albumImages[i].after(iconDiv);
     }
@@ -53,12 +60,12 @@ window.addEventListener("load", (event) => {
   //   }
   // }
   // // getData();
-});
+};
 
 function displayCode() {}
 
 // FAVOURITE HEART ICON TOGGLE
-const icon = document.getElementById("toggle");
-icon.addEventListener("click", (event) => {
-  icon.querySelector(":last-child").classList.toggle("fa-heart");
-});
+// const icon = document.getElementById("toggle");
+// icon.addEventListener("click", (event) => {
+//   icon.querySelector(":last-child").classList.toggle("fa-heart");
+// });
