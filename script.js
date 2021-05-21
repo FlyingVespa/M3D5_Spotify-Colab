@@ -1,4 +1,4 @@
-window.addEventListener("load", (event) => {
+window.onload = () => {
   console.log("page is fully loaded");
   fetch("../Navbar/navbar.html")
     .then((response) => {
@@ -19,29 +19,26 @@ window.addEventListener("load", (event) => {
   }
   insertPlayIcon();
 
-  // function HomePage() {
-  //   location.replace("HomePage.html");
-  // }
+  function HomePage() {
+    location.replace("HomePage.html");
+  }
 
-  // function Podcast() {
-  //   location.replace("Podcast.html");
-  // }
+  function Podcast() {
+    location.replace("Podcast.html");
+  }
 
-  // function Genres() {
-  //   location.replace("Genres.html");
-  // }
+  function Genres() {
+    location.replace("Genres.html");
+  }
 
-  // function Newreleases() {
-  //   location.replace("NewReleases.html");
-  // }
+  function Newreleases() {
+    location.replace("NewReleases.html");
+  }
 
-  // function Discover() {
-  //   location.replace("Discover.html");
-  // }
-
-  
-
-
+  function Discover() {
+    location.replace("Discover.html");
+  }
+};
 
 // FAVOURITE HEART ICON TOGGLE
 const icon = document.getElementById("toggle");
