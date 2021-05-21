@@ -39,20 +39,20 @@ window.addEventListener("load", (event) => {
     location.replace("Discover.html");
   }
 
-  async function getData() {
-    const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
-    const response = await fetch(url, {
-      headers: {
-        "x-rapidapi-key": "f63820576cmshd99ae1c2eec0cfap1f5daajsne468be2e59ef",
-        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-      },
-    });
-    const data = await response.json();
-    if (response.ok) {
-      console.log(data);
-    }
-  }
-  getData();
+  // async function getData() {
+  //   const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
+  //   const response = await fetch(url, {
+  //     headers: {
+  //       "x-rapidapi-key": "f63820576cmshd99ae1c2eec0cfap1f5daajsne468be2e59ef",
+  //       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+  //     },
+  //   });
+  //   const data = await response.json();
+  //   if (response.ok) {
+  //     // console.log(data);
+  //   }
+  // }
+  // // getData();
 });
 
 function displayCode() {}
