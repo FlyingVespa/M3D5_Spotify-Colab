@@ -1,5 +1,6 @@
-window.addEventListener("load", (event) => {
+window.onload = () => {
   console.log("page is fully loaded");
+
   fetch("../Navbar/navbar.html")
     .then((response) => {
       return response.text();
@@ -7,12 +8,18 @@ window.addEventListener("load", (event) => {
     .then((data) => {
       document.querySelector("navbar").innerHTML = data;
     });
+  // .then(() => {
+  //   console.log(document.querySelector("#search-btn"));
+  //   let input_s = document.querySelector("#search-btn");
+
+  //   input_s.addEventListener("click", (e) => searchButtonFun(e));
+  // });
 
   function insertPlayIcon() {
     let albumImages = document.getElementsByClassName("rounded");
     for (let i = 0; i < albumImages.length; i++) {
       let iconDiv = document.createElement("div");
-      iconDiv.className = "newPlay";
+      iconDiv.className.add("newPlay");
       iconDiv.innerHTML = `<i class="fas fa-play-circle"></i>`;
       albumImages[i].after(iconDiv);
     }
@@ -38,27 +45,15 @@ window.addEventListener("load", (event) => {
   function Discover() {
     location.replace("Discover.html");
   }
-
-  async function getData() {
-    const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem";
-    const response = await fetch(url, {
-      headers: {
-        "x-rapidapi-key": "f63820576cmshd99ae1c2eec0cfap1f5daajsne468be2e59ef",
-        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-      },
-    });
-    const data = await response.json();
-    if (response.ok) {
-      console.log(data);
-    }
-  }
-  getData();
-});
-
-function displayCode() {}
-
+};
+const searchButtonFun = (e) => {
+  console.log(e);
+  //const searchField = e.target.parentElement.previousSibling.value;
+  // const divRow = document.querySelector(".albums");
+  //console.log(searchField);
+};
 // FAVOURITE HEART ICON TOGGLE
-const icon = document.getElementById("toggle");
-icon.addEventListener("click", (event) => {
-  icon.querySelector(":last-child").classList.toggle("fa-heart");
-});
+// const icon = document.getElementById("toggle");
+// icon.addEventListener("click", (event) => {
+//   icon.querySelector(":last-child").classList.toggle("fa-heart");
+// });

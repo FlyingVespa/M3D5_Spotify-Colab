@@ -1,247 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
-      crossorigin="anonymous"
-    />
 
-    <link rel="stylesheet" href="../css/navbar.css" />
-    >
-    <title>Spootify</title>
-  </head>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
 
-  <body>
-    <!-- Side navigation -->
-    <div class="sidenav">
-      <div>
-        <a href="https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2"
+  <link rel="stylesheet" href="../css/navbar.css" />
+  
+  <title>Spootify</title>
+</head>
+
+<body>
+  <!-- Side navigation -->
+  <div class="sidenav">
+    <div>
+      <a href="https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2"><img
+          src="../assets/images/icons/spotify-sidebar-logo.png" class="sidebar-logo" /></a>
+      <a href="../html/HomePage.html" class="greenborder homeGreen"><img class="sidebarIcon"
+          src="../assets/images/icons/sidebar-home.png" />
+        Home Page</a>
+    </div>
+    <a href="../html/ArtistPage.html" class="greenborder libraryGreen"><img class="sidebarIcon"
+        src="../assets/images/icons/sidebar-library.png" />
+      Artist Page</a>
+    <a href="../html/AlbumPage.html" class="greenborder libraryGreen"><img class="sidebarIcon"
+        src="../assets/images/icons/sidebar-library.png" />
+      Album Page</a>
+      <a class="greenborder searchGreen" data-toggle="collapse" href="#collapseSearch" role="button"
+        aria-expanded="false" aria-controls="collapseSearch"
           ><img
-            src="../assets/images/icons/spotify-sidebar-logo.png"
-            class="sidebar-logo"
-        /></a>
-        <a href="../html/HomePage.html" class="greenborder homeGreen"
-          ><img
-            class="sidebarIcon"
-            src="../assets/images/icons/sidebar-home.png"
-          />
-          Home</a
-        >
-       
-       
-          <a class="greenborder searchGreen" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample""
-          ><img
-            class="sidebarIcon"
-            src="../assets/images/icons/sidebar-search.png"
-          />
-          Search</a
-        >
-                <div class="collapse" id="collapseExample">
-          <input type="search" class="form-control">
+            class=" sidebarIcon" src="../assets/images/icons/sidebar-search.png" />
+      Search</a>
+    
+        <div class="input-group collapse" id="collapseSearch">
+
+          <input type="text" class="form-control"><button class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg></button>
         </div>
-        <a href="../html/ArtistPage.html" class="greenborder libraryGreen"
-          ><img
-            class="sidebarIcon"
-            src="../assets/images/icons/sidebar-library.png"
-          />
-          Your Library</a
-        >
-        <a href="../html/AlbumPage.html" class="greenborder libraryGreen"
-          ><img
-            class="sidebarIcon"
-            src="../assets/images/icons/sidebar-library.png"
-          />
-          Album Page</a
-        >
+      
+  </div>
+  <div class="navFoot">
+    <a type="button" class="btn btn-secondary loginBtn text-dark">Sign Up</a>
+    <a type="button" href="../index.html" class="btn btn-dark loginBtn">Login</a>
+    <a class="cookies p-0">Cookies | Privacy</a>
+  </div>
+  </div>
+  <!--  Bottom controls -->
+  <div class="footer fixed-bottom">
+    <div class="smallnav">
+      <hr />
+      <div class="smallnavicon">
+        <a href="./html/HomePage.html" class="smallnavicon"><img class="sidebarIcon"
+            src="../assets/images/icons/sidebar-home.png" />
+          Home</a>
       </div>
-      <div class="navFoot">
-        <a type="button" class="btn btn-secondary loginBtn text-dark"
-          >Sign Up</a
-        >
-        <a type="button" href="../index.html" class="btn btn-dark loginBtn"
-          >Login</a
-        >
-        <a class="cookies p-0">Cookies | Privacy</a>
+     
+      <div class="smallnavicon">
+        <a href="../html/ArtistPage.html" class="smallnavicon"><img class="sidebarIcon"
+            src="../assets/images/icons/sidebar-library.png" />
+          Artist Page</a>
+      </div>
+      <div class="smallnavicon">
+        <a href="../html/AlbumPage.html" class="smallnavicon"><img class="sidebarIcon"
+            src="../assets/images/icons/sidebar-library.png" />
+          Track List</a>
+      </div>
+      <div class="smallnavicon">
+        <a  class="smallnavicon" ata-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseExample"<img class="sidebarIcon"
+            src="../assets/images/icons/sidebar-search.png" />
+          Search</a>
+          <div class="input-group mb-3"   id="collapseExample">
+            <input type="text" class="form-control" id="search-input" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button id='search-btn' class="btn btn-outline-secondary" type="button">Button</button>
+            </div>
+          </div>
       </div>
     </div>
-    <!--  Bottom controls -->
-    <div class="footer fixed-bottom">
-      <div class="smallnav">
-        <hr />
-        <div class="smallnavicon">
-          <a href="./html/HomePage.html" class="smallnavicon"
-            ><img
-              class="sidebarIcon"
-              src="../assets/images/icons/sidebar-home.png"
-            />
-            Home</a
-          >
+    <div class="row">
+      <div class="col-2 col-md-2 bottomLeft">
+        <a href="albumpage.html"><img src="./../assets/images/album-images/hey-jude.jpg" class="currentalbumart"
+            alt="Album" style="margin-right: 5px" /></a>
+        <div class="d-inline p-1 songartist">
+          <h6 class="text-white">Help!</h6>
+          Beatles
         </div>
-        <div class="smallnavicon">
-          <a href="./search.html" class="smallnavicon"
-            ><img
-              class="sidebarIcon"
-              src="../assets/images/icons/sidebar-search.png"
-            />
-            Search</a
-          >
-        </div>
-        <div class="smallnavicon">
-          <a href="../html/ArtistPage.html" class="smallnavicon"
-            ><img
-              class="sidebarIcon"
-              src="../assets/images/icons/sidebar-library.png"
-            />
-            Artist Page</a
-          >
-        </div>
-        <div class="smallnavicon">
-          <a href="../html/AlbumPage.html" class="smallnavicon"
-            ><img
-              class="sidebarIcon"
-              src="../assets/images/icons/sidebar-library.png"
-            />
-            Track List</a
-          >
-        </div>
+        <span class="fa-stack d-none d-md-block hideicon bottomIcon" id="toggle">
+          <i class="far fa-heart fa-stack-1x"></i>
+          <i class="fas fa-heart fa-stack-1x"></i>
+        </span>
+        <a href="#"><img class="bottomIcon d-none d-md-block hideicon"
+            src="../assets/images/icons/icons8-toggle-full-screen-96.png" /></a>
       </div>
-      <div class="row">
-        <div class="col-2 col-md-2 bottomLeft">
-          <a href="albumpage.html"
-            ><img
-              src="./../assets/images/album-images/hey-jude.jpg"
-              class="currentalbumart"
-              alt="Album"
-              style="margin-right: 5px"
-          /></a>
-          <div class="d-inline p-1 songartist">
-            <h6 class="text-white">Help!</h6>
-            Beatles
+      <div class="col-9 col-md-9">
+        <div class="bottomMiddle">
+          <a href="#"><img src="../assets/images/icons/icons8-shuffle-24.png" alt="Shuffle"
+              class="bottomIcon shuffleicon d-none d-md-block" /></a><a href="test.html"><img
+              src="../assets/images/icons/icons8-rewind-52.png" alt="Rewind" class="bottomIcon" /></a>
+          <div alt="Play Button"  class="playbutton text-white">
+            <i class="fas fa-play-circle playhover mx-0"></i>
           </div>
-          <span
-            class="fa-stack d-none d-md-block hideicon bottomIcon"
-            id="toggle"
-          >
-            <i class="far fa-heart fa-stack-1x"></i>
-            <i class="fas fa-heart fa-stack-1x"></i>
-          </span>
-          <a href="#"
-            ><img
-              class="bottomIcon d-none d-md-block hideicon"
-              src="../assets/images/icons/icons8-toggle-full-screen-96.png"
-          /></a>
-        </div>
-        <div class="col-9 col-md-9">
-          <div class="bottomMiddle">
-            <a href="#"
-              ><img
-                src="../assets/images/icons/icons8-shuffle-24.png"
-                alt="Shuffle"
-                class="bottomIcon shuffleicon d-none d-md-block" /></a
-            ><a href="test.html"
-              ><img
-                src="../assets/images/icons/icons8-rewind-52.png"
-                alt="Rewind"
-                class="bottomIcon"
-            /></a>
-            <div
-              alt="Play Button"
-              onmouseover="rick.play()"
-              class="playbutton text-white"
-            >
-              <i class="fas fa-play-circle playhover mx-0"></i>
-            </div>
-            <a href="#"
-              ><img
-                src="../assets/images/icons/icons8-fast-forward-52.png"
-                alt="Forward"
-                class="bottomIcon"
-                style="
+          <a href="#"><img src="../assets/images/icons/icons8-fast-forward-52.png" alt="Forward" class="bottomIcon"
+              style="
                   margin-left: 0px;
                   padding-left: 0px;
                   left: 0px;
                   margin-left: 10px;
-                " /></a
-            ><a href="test.html"
-              ><img
-                src="../assets/images/icons/icons8-repeat-60.png"
-                alt="Repeat"
-                class="bottomIcon d-none d-md-block" /></a
-            ><br />
+                " /></a><a href="test.html"><img src="../assets/images/icons/icons8-repeat-60.png" alt="Repeat"
+              class="bottomIcon d-none d-md-block" /></a><br />
+        </div>
+        <div class="row bottomMiddle">
+          <div class="col-1 songtime py-1" style="text-align: right">
+            00:00
           </div>
-          <div class="row bottomMiddle">
-            <div class="col-1 songtime py-1" style="text-align: right">
-              00:00
-            </div>
-            <div class="col-8">
-              <div class="progress mx-0" style="height: 5px">
-                <div
-                  class="progress-bar bg-success mx-0"
-                  role="progressbar"
-                  aria-valuenow="25"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <p>FILL UP tHE BAR</p>
-                </div>
+          <div class="col-8">
+            <div class="progress mx-0" style="height: 5px">
+              <div class="progress-bar bg-success mx-0" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100">
+                <p>FILL UP tHE BAR</p>
               </div>
             </div>
-            <div class="col-1 p-0 py-1 songtime">4:20</div>
           </div>
-        </div>
-        <div class="col-1 bottomRight">
-          <a href="#"
-            ><img
-              src="../assets/images/icons/icons8-playlist-32.png"
-              alt=""
-              class="bottomIcon d-none d-md-block hideicon"
-          /></a>
-          <a href="#"
-            ><img
-              src="../assets/images/icons/icons8-subwoofer-48.png"
-              alt=""
-              class="bottomIcon d-none d-md-block hideicon"
-            /> </a
-          ><a href=""
-            ><img
-              src="../assets/images/icons/icons8-speaker-48.png"
-              alt=""
-              class="d-none d-md-block bottomIcon"
-          /></a>
-          <input
-            type="range"
-            class="form-control-range slidernav d-md-block"
-            style="width: 100px"
-          />
+          <div class="col-1 p-0 py-1 songtime">4:20</div>
         </div>
       </div>
+      <div class="col-1 bottomRight">
+        <a href="#"><img src="../assets/images/icons/icons8-playlist-32.png" alt=""
+            class="bottomIcon d-none d-md-block hideicon" /></a>
+        <a href="#"><img src="../assets/images/icons/icons8-subwoofer-48.png" alt=""
+            class="bottomIcon d-none d-md-block hideicon" /> </a><a href=""><img
+            src="../assets/images/icons/icons8-speaker-48.png" alt="" class="d-none d-md-block bottomIcon" /></a>
+        <input type="range" class="form-control-range slidernav d-md-block" style="width: 100px" />
+      </div>
     </div>
+  </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+    <!-- <script src="../search.js"></script> -->
+  <script src="../script.js"></script>
+</body>
+
 </html>
