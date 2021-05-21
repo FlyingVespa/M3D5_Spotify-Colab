@@ -1,19 +1,27 @@
 let searchData = [];
+let searchInput = document.querySelector("#search-input");
 
-const searchButtonFun = () => {
-  const divRow = document.querySelector(".albums");
-  divRow.innerHTML = "";
-  const searchInput = document.getElementById("search-input").value;
-  const myfetch = fetch(
-    `https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchInput}`
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      searchData = data.data;
-      // loadAlbums(data.data);
-      console(searchData);
-    })
-    .catch((error) => alert(error));
+// const urlParams = new URLSearchParams(window.location.search);
+
+// let params = new URL(document.location).searchParams;
+
+// let age = parseInt(params.get("age")); // is the number 18
+
+const searchButtonFun = (e) => {
+  console.log(e);
+  const searchField = e.target.parentElement.previousSibling.value;
+  // const divRow = document.querySelector(".albums");
+  console.log(searchField);
+  // fetch(
+  //   `https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchField}`
+  // )
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     searchData = data.data;
+  //     // loadAlbums(data.data);
+  //     console.log(searchData);
+  //   })
+  //   .catch((error) => alert(error));
   // };
 
   // const loadAlbums = (newData) => {
@@ -48,19 +56,17 @@ const searchButtonFun = () => {
   //   });
 };
 
-window.onload = () => {
-  // let rootLink = location.href.replace('search.html', '');
-  // console.log('rootLink:', rootLink)
-  // console.log('location:', location)
-  // console.log('location.href:', location.href)
-  document
-    .getElementById("search-input")
-    .addEventListener("keypress", function (e) {
-      if (e.key === "Enter") {
-        searchButtonFun();
-      }
-    });
-};
+// window.onload = () => {
+//   // let rootLink = location.href.replace('search.html', '');
+//   // console.log('rootLink:', rootLink)
+//   // console.log('location:', location)
+//   // console.log('location.href:', location.href)
+//   document
+//     .getElementById("search-input")
+//     .addEventListener("keypress", function (e) {
+//       searchButtonFun(e);
+//     });
+// };
 
 // const loadSongs = (songs) => {
 //     console.log('songs:', songs)
