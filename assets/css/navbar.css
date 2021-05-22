@@ -85,7 +85,8 @@
 .navbar.bottombar {
   z-index: 2;
   display: flex;
-  position: absolute;
+  position: fixed;
+
   width: 100vw;
   bottom: 0;
   height: 100px;
