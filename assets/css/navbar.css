@@ -7,7 +7,7 @@
 
 .navbar.sidebar {
   height: 100%;
-  width: 250px;
+  width: 200px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -25,6 +25,7 @@
 
 .navbar.sidebar > ul > a > .fa-spotify {
   font-size: 40px;
+  padding-top: 10px;
   color: #fff;
 }
 
@@ -34,13 +35,13 @@
 .navbar.sidebar > ul > a {
   padding: 10px;
   text-decoration: none;
-  font-size: 35px !important;
+  font-size: 25px !important;
   color: #fff;
 }
 .navbar.sidebar > ul > li > a {
   padding: 6px 25px 6px 25px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 16px;
   color: #818181;
   display: block;
 }
@@ -48,12 +49,12 @@
 .navbar.sidebar > ul > li > a:hover {
   color: #f1f1f1;
   text-decoration: none !important;
-  border-left: 7px solid #1db954;
+  border-left: 5px solid #1db954;
 }
 
 .navbar.sidebar > ul > li > a > .icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin-bottom: 10px;
 }
 
@@ -63,7 +64,7 @@
   display: flex;
 }
 .navbar.sidebar .loginBtn {
-  width: 200px;
+  width: 170px;
   border: 3px solid rgb(201, 201, 201);
   border-radius: 30px;
   margin-bottom: 10px;
@@ -86,15 +87,13 @@
   z-index: 2;
   display: flex;
   position: fixed;
-
-  width: 100vw;
+  width: 100%;
   bottom: 0;
-  height: 100px;
+  height: 120px;
   background-color: #212121;
   color: rgb(221, 221, 221);
   padding: 10px 10px 0px 10px;
   line-height: 0;
-  font-size: 10px;
   font-family: spotifyfont;
   padding: 0;
 }
@@ -104,24 +103,23 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-left: 10px;
 }
 
 .navbar.bottombar > .row > .col > a {
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 30px;
+}
+.navbar.bottombar > .row > .col > a> img{
+padding: 10px;
 }
 
 .navbar.bottombar > .row > .col > ul {
-  /* border: #b91d1d 5px solid; */
-  flex-basis: auto;
-  align-self: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  font-size: 16px;
+  font-size: 12px;
   margin: 0;
 }
 
@@ -140,11 +138,11 @@
 }
 .navbar.bottombar > .row > .col:nth-child(1) {
   padding: 0;
-  flex: 0.5;
+  flex:0.4;
 }
 .navbar.bottombar > .row > .col:nth-child(2) {
   padding: 0;
-  flex: 0.6;
+  flex: 0.3;
 }
 .navbar.bottombar > .row > .col:nth-child(3) {
   padding: 0;
@@ -154,8 +152,8 @@
 .navbar.bottombar > .row > .col:nth-child(4) {
   border: 3px yellow solid;
   padding: 0;
-  flex: 12;
-  width: 100%;
+  flex: 5;
+ width: 300px !important;
 }
 
 .navbar.bottombar > .row > .col:nth-child(5) {
@@ -163,16 +161,75 @@
   border: 3px rgb(47, 0, 255) solid;
   padding: 0;
   flex: 2;
-  width: 100%;
+
 }
 
 .navbar.bottombar > .row > .col > i {
   padding: 5px;
   font-size: 20px;
 }
-body > div.navbar.bottombar > .row > .col:nth-child(4) > .row > .col {
-  border: green solid 4px;
-  font-size: 20px;
+.navbar.bottombar > .row > .col:nth-child(4) > .row > .col:nth-child(1) {
+  /* border: green solid 4px; */
+  flex: none;
+  font-size: 16px;
+  padding: 5px;
+  width: 90px;
+  height: 35px;
+  align-items: center;
+
+}
+.navbar.bottombar > .row > .col:nth-child(4) > .row > .col:nth-child(2) {
+  /* border: rgb(128, 0, 70) solid 4px; */
+  flex: none;
+  font-size: 26px;
+  /* padding: 5px; */
+  width: 70px;
+  height: max-content;
+}
+.navbar.bottombar > .row > .col:nth-child(4) > .row > .col:nth-child(3) {
+  /* border: rgb(77, 0, 128) solid 4px; */
+  flex: none;
+  font-size: 16px;
+  padding: 5px;
+  width: 90px;
+  height: 35px;
+}
+.navbar.bottombar .bi-play-circle:hover {
+font-size: 27px;
+color: rgb(131, 131, 131);
+}
+.navbar.bottombar .bi-skip-forward-fill:hover {
+font-size: 18px;
+color: rgb(131, 131, 131);
+}
+.navbar.bottombar .bi-skip-backward-fill:hover {
+font-size: 18px;
+color: rgb(131, 131, 131);
+}
+.navbar.bottombar .bi-shuffle:hover {
+font-size: 18px;
+color: rgb(131, 131, 131);
+}
+.navbar.bottombar .bi-arrow-repeat:hover {
+font-size: 18px;
+color: rgb(131, 131, 131);
+}
+.navbar.bottombar .bi-shuffle:hover {
+font-size: 18px;
+color: rgb(131, 131, 131);
+}
+
+.navbar.bottombar > .row > .col:nth-child(4) > .row:nth-child(1) {
+  border: rgb(77, 0, 128) solid 4px;
+  font-size: 16px;
+  justify-content: center;
+  width: 500px;
+}
+.navbar.bottombar > .row > .col:nth-child(4) > .row:nth-child(2) {
+  border: rgb(0, 128, 53) solid 4px;
+  font-size: 16px;
+  justify-content: center;
+  width: 500px;
 }
 
 .navbar.smallsidebar {
@@ -195,41 +252,7 @@ body > div.navbar.bottombar > .row > .col:nth-child(4) > .row > .col {
   height: 75px;
   width: 75px;
 }
-.playbutton {
-  color: white !important;
-  font-size: 25px;
-  margin-top: 7px;
-}
-.playbutton:hover {
-  font-size: 27px;
-}
-.shuffleicon {
-  padding-top: 4px;
-}
-.bottomIcon {
-  width: 20px;
-  height: 20px;
-  margin: 10px;
-  font-size: 14px;
-  line-height: 1.5;
-}
 
-.bottomMiddle {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.bottomRight {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.songartist {
-  margin-left: 1px;
-  margin-bottom: 15px;
-  color: rgb(173, 173, 173);
-}
 
 @media only screen and (max-width: 768px) {
   .navbar.sidebar {
