@@ -1,7 +1,7 @@
 window.onload = () => {
   console.log("page is fully loaded");
 
-  fetch("../Navbar/navbar.html")
+  fetch("html/navbar.html")
     .then((response) => {
       return response.text();
     })

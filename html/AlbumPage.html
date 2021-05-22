@@ -23,7 +23,7 @@
     <div class="row mt-5">
       <div class="col-lg-6 col-md-6 album-n">
         <div id="album-image-container" class="container m-0 p-1">
-          <img src="./assets/images/album-images/hey-jude.jpg" id="img-album-n" alt="" />
+          <img src="../assets/images/album-images/hey-jude.jpg" id="img-album-index" alt="" />
           <h4>Greatest Hits Collection (First Edition)</h4>
           <p>Beatles</p>
           <button class="btn btn-success btn-n">PLAY</button>
@@ -47,7 +47,6 @@
       </div>
     </div>
   </div>
-  <!-- <script src="../script.js"></script> -->
   <script>
 
     const trackList = document.getElementById("tracks")
@@ -56,20 +55,22 @@
     window.onload = ()=>{
       loadAlbums()
 
-
     }
-      
-      
       let albums = []
-      
+      let albumstest = []
+      const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/album/7766062"
       function loadAlbums(){
-        fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
-        .then((response) =>response.json())
+        fetch(endpoint) //address endpoint 
+        .then((response) =>response.json())  //
         .then((_albums) =>{
           albums = _albums.tracks.data
-          console.log(albums)
-          displayAlbums()     
+          albumstest = _albums
+          console.log(_albums)
+          displayAlbums()  
+          displayAlbumImage()   
         })
+        // .then( countSongs())
+    
         .catch((err) => console.log(err))
       }
       
@@ -80,17 +81,29 @@
             <li>${album.artist.name}</li>`
         )
       }
-
       function displayAlbumImage(){
         const getImg = document.querySelector("album-image-container>img")
         // getImg.i
-
-        // imageContainer.
-
-
+        console.log(albumstest.cover_big);
+        imageContainer.innerHTML =""
+        imageContainer.innerHTML +=`<div id="album-image-container" class="container m-0 p-1">
+          <img src="${albumstest.cover_big}" id="img-album-index" alt="" />
+          <h4>Greatest Hits Collection (First Edition)</h4>
+          <p>${albumstest.artist.name}</p>
+          <button class="btn btn-success btn-n">PLAY</button>
+          <p>1970 &#8226 16 SONGS</p>
+          <div>
+            <span class="fa-stack mb-2" id="toggle">
+              <i class="far fa-heart fa-stack-1x"></i>
+              <i class="fas fa-heart fa-stack-1x"></i>
+            </span>
+            <span><i class="fa fa-ellipsis-h mb-2"></i></span>
+          </div>
+        </div>`
       }
 
   </script>
+  <script src="../script.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -99,8 +112,5 @@
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
 </body>
-<script src="../album.js">
-         
-</script>
 
 </html>
