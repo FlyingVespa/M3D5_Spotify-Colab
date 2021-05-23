@@ -1,9 +1,5 @@
 let Albums=[]
 const artistCoverDiv=document.getElementById("artist-cover")
-window.onload=()=>{
-
-    loadAlbums()
-}
 
 const loadAlbums=()=>{
     fetch( "https://striveschool-api.herokuapp.com/api/deezer/artist/1234/albums")
