@@ -294,9 +294,10 @@ li:nth-child(odd) {
   right: 0;
   text-align: center;
   height: 100vh;
+  margin-left: 250px;
 }
 
-.album-inndex p {
+.album-index p {
   margin-top: 10px;
   color: #5d5d5d;
   font-size: 12px;
@@ -334,7 +335,7 @@ li:nth-child(odd) {
     overflow: visible;
   }
 
-  #img-album-n {
+  #img-album-index {
     width: 100%;
     max-width: 500px;
   }
@@ -375,10 +376,12 @@ li:nth-child(odd) {
     width: 100%;
     min-width: 300px;
     text-align: center;
+    margin-left: 0;
   }
 
-  #img-album-n {
+  #img-album-index {
     min-width: 280px;
+    margin-left: 0px;
   }
 }
 
