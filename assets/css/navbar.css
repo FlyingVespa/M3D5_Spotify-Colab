@@ -24,7 +24,7 @@
 }
 
 .navbar.sidebar > ul > a > .fa-spotify {
-  font-size: 40px;
+  font-size: 45px;
   padding-top: 10px;
   color: #fff;
 }
@@ -101,6 +101,7 @@
   line-height: 0;
   font-family: spotifyfont;
   padding: 0;
+  left: 0;
 }
 /* Main row that contains all items in bottom bar */
 .navbar.bottombar > .row {
@@ -330,3 +331,7 @@ input[type="range"]::-ms-track {
     /* transform: rotate(270deg); */
   }
 }
+
+/*Originial Author: Thomas Knight
+Reworked & Stlyed: Hedri Nel (Considirable changes done)
+*/
