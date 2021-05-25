@@ -1,118 +1,77 @@
 window.onload = () => {
   console.log("page is fully loaded");
-
+  fetchAlbums();
   fetch("./navbar.html")
     .then((response) => {
       return response.text();
     })
     .then((data) => {
       document.querySelector("navbar").innerHTML = data;
-      load_default_albums();
     });
 };
 
-function insertPlayIcon() {
-  let albumImages = document.getElementsByClassName("rounded");
-  for (let i = 0; i < albumImages.length; i++) {
-    let iconDiv = document.createElement("div");
-    iconDiv.className.add("newPlay");
-    iconDiv.innerHTML = `<i class="fas fa-play-circle"></i>`;
-    albumImages[i].after(iconDiv);
-  }
+const artistCoverDiv = document.querySelector(".card");
+const thisIsRow = document.querySelector(".HomePage-body>.row>.col>.row");
+let albumsData = [];
+
+function fetchAlbums() {
+  fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=usher")
+    .then((res) => res.json())
+    .then((_Albums) => {
+      albumsData = _Albums.data;
+      console.log(albumsData);
+      displayArtists();
+    })
+    .catch((err) => console.error(err.message));
 }
-insertPlayIcon();
 
-// FAVOURITE HEART ICON TOGGLE
-// const icon = document.getElementById("toggle");
-// icon.addEventListener("click", (event) => {
-//   icon.querySelector(":last-child").classList.toggle("fa-heart");
-// });
-const row_select_homepage = document.querySelectorAll(".row-title-HomePage");
-
-const load_default_albums = () => {
-  for (let i = 0; i < row_select_homepage.length; i++) {
-    const album_row_div = `
-  <div class="row mt-4 mb-4">
-  <div class="col-xs-4 col-md-3 col-lg-2 col-sm-4">
-    <div class="card-HomePage">
-      <i class="fab fa-spotify logoStyle"></i>
-      <img
-        src="../assets/images/album-images/ColdabankFreedo-album.jpg"
-        class="img-fluid rounded"
-        alt="album-image"
-      />
-      <i class="fas fa-play-circle newPlay"></i>
-    </div>
-    <div class="card-HomePage-title">Cold & Freedo</div>
+const displayArtists = () => {
+  albumsData.slice(0, 6).forEach(
+    (album) =>
+      (artistCoverDiv.innerHTML += `
+      <div id="this_card" class="card">
+  <img src="${album.artist.picture_big}" />
+  <div class="card-body">
+    <h5>${album.title}</h5>
+    <h6 class="text-muted">${album.artist.name}</h6>
   </div>
-  <div class="col-xs-4 col-md-3 col-lg-2 col-sm-4">
-    <div class="card-HomePage">
-      <i class="fab fa-spotify logoStyle"></i>
-      <img
-        src="../assets/images/album-images/ColdabankFreedo-album.jpg"
-        class="img-fluid rounded"
-        alt="album-image"
-      />
-      <i class="fas fa-play-circle newPlay"></i>
-    </div>
-    <div class="card-HomePage-title">Cold & Freedo</div>
-  </div>
-  <div class="col-xs-4 col-md-3 col-lg-2 col-sm-4">
-    <div class="card-HomePage">
-      <i class="fab fa-spotify logoStyle"></i>
-      <img
-        src="../assets/images/album-images/ColdabankFreedo-album.jpg"
-        class="img-fluid rounded"
-        alt="album-image"
-      />
-      <i class="fas fa-play-circle newPlay"></i>
-    </div>
-    <div class="card-HomePage-title">Cold & Freedo</div>
-  </div>
-  <div class="col-xs-4 col-md-3 col-lg-2 col-sm-4">
-    <div class="card-HomePage">
-      <i class="fab fa-spotify logoStyle"></i>
-      <img
-        src="../assets/images/album-images/ColdabankFreedo-album.jpg"
-        class="img-fluid rounded"
-        alt="album-image"
-      />
-      <i class="fas fa-play-circle newPlay"></i>
-    </div>
-    <div class="card-HomePage-title">Cold & Freedo</div>
-  </div>
-  <div class="col-xs-4 col-md-3 col-lg-2 col-sm-4">
-    <div class="card-HomePage">
-      <i class="fab fa-spotify logoStyle"></i>
-      <img
-        src="../assets/images/album-images/ColdabankFreedo-album.jpg"
-        class="img-fluid rounded"
-        alt="album-image"
-      />
-      <i class="fas fa-play-circle newPlay"></i>
-    </div>
-    <div class="card-HomePage-title">Cold & Freedo</div>
-  </div>
-  <div class="col-xs-4 col-md-3 col-lg-2 col-sm-4">
-    <div class="card-HomePage">
-      <i class="fab fa-spotify logoStyle"></i>
-      <img
-        src="../assets/images/album-images/ColdabankFreedo-album.jpg"
-        class="img-fluid rounded"
-        alt="album-image"
-      />
-      <i class="fas fa-play-circle newPlay"></i>
-    </div>
-    <div class="card-HomePage-title">Cold & Freedo</div>
-  </div>
-</div>
-  `;
-    row_select_homepage[i].appendChild(album_row_div);
-  }
+</div>`)
+  );
+  thisIsRow.appendChild(artistCoverDiv);
 };
 
-console.clear();
+const searchButtonFun = () => {
+  const divRow = document.querySelector(".row.thisrow");
+  divRow.innerHTML = "";
+  const searchInput = document.getElementById("search-input").value;
+  const myfetch = fetch(
+    `https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchInput}`
+  )
+    .then((res) => res.json())
+    .then((data) => loadAlbums(data.data))
+    .catch((error) => alert(error));
+};
 
-// instigate our audio context
-
-// for cross browser
+const loadAlbums = (newData) => {
+  const divRow = document.querySelector(".row.thisrow");
+  newData.forEach((element) => {
+    divRow.innerHTML += `
+    <div id="this_card" class="card" style="width: 14rem">
+      <img src="${element.album.cover}" />
+      <div class="card-body">
+            <h5><a href='${location.href.replace(
+              "SearchPage.html",
+              ""
+            )}AlbumPage.html?id=${element.artist.id}'>${element.album.title}</a>
+            </h5>
+            <h6><a href='${location.href.replace(
+              "SearchPage.html",
+              ""
+            )}ArtistPage.html?id=${element.artist.id}'>${
+      element.artist.name
+    }</a></h6>
+          </div>
+    </div>
+    `;
+  });
+};

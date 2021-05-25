@@ -41,13 +41,15 @@
         <i class="bi bi-arrow-left-circle-fill"></i>
         <i class="bi bi-arrow-right-circle-fill"></i>
         <div class="input-group">
-          <button><i class="bi bi-search"></i></button>
-          <input type="search" />
+          <button>
+            <i class="bi bi-search" onclick="searchButtonFun()"></i>
+          </button>
+          <input id="search-input" type="search" />
         </div>
       </div>
     </div>
     <h2>Top Genres</h2>
-    <div class="row">
+    <div class="row thisrow">
       <img src="../assets/images/discover-images/toppop.png" alt="Rock" />
       <img src="../assets/images/discover-images/toprock.png" alt="Rock" />
       <img src="../assets/images/discover-images/topindie.png" alt="Rock" />
@@ -86,6 +88,7 @@
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"
     ></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
