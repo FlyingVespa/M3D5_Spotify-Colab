@@ -67,7 +67,7 @@ const searchButtonFun = (q = query) => {
   searchPageRow2.innerHTML = "";
   searchPageRow.innerHTML = "";
   // spinnerS.classList.add("d-none");
-  const query = document.getElementById("input-SearchPage").value;
+  // const q = document.getElementById("input-SearchPage").value;
   fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${q}`)
     .then((res) => res.json())
     .then((data) => loadSearchResults(data.data))
@@ -75,10 +75,10 @@ const searchButtonFun = (q = query) => {
 };
 
 const searchPageRow2 = document.querySelector(".SearchPage-body>.row.thisrow2");
+const searchPageRow = document.querySelector(".SearchPage-body>.row.thisrow");
 const loadSearchResults = (newData) => {
-  const searchPageRow = document.querySelector(".SearchPage-body>.row.thisrow");
   newData.forEach((element) => {
-    divRow.innerHTML += `
+    searchPageRow.innerHTML += `
     <div id="this_card" class="card" style="width: 14rem">
       <img src="${element.album.cover}" />
       <div class="card-body">
