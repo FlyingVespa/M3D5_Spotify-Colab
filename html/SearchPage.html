@@ -38,12 +38,19 @@
           <button>
             <i class="bi bi-search" onclick="searchButtonFun()"></i>
           </button>
-          <input id="search-input" type="search" />
+          <input
+            id="input-SearchPage"
+            type="search"
+            onkeyup="handleSearchQuery(event)"
+          />
         </div>
       </div>
     </div>
     <h2>Top Genres</h2>
     <div class="row thisrow">
+      <div class="spinner-border text-danger d-none" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
       <img src="../assets/images/discover-images/toppop.png" alt="Rock" />
       <img src="../assets/images/discover-images/toprock.png" alt="Rock" />
       <img src="../assets/images/discover-images/topindie.png" alt="Rock" />
@@ -51,7 +58,7 @@
     </div>
     <!-- END OF BROWSE ALL -->
     <h2>Browse All</h2>
-    <div class="row">
+    <div class="row thisrow2">
       <img src="../assets/images/discover-images/podcastsearch.png" alt="" />
       <img src="../assets/images/discover-images/madeforyou.png" alt="" />
       <img src="../assets/images/discover-images/discover.png" alt="" />

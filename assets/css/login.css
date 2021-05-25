@@ -211,7 +211,7 @@ i {
 
 /* -------------------------- Album Page start ------------------------- */
 /*-only body of albumpage-*/
-.body-AlbumPage {
+.AlbumPage-body {
   background-color: #5d5d5d !important;
   background-image: linear-gradient(132deg, #202020 0%, #050505 95%) !important;
   overflow: hidden;
@@ -220,10 +220,6 @@ i {
 
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-.invisible-placeholder-n {
-  border: solid palegreen 2px;
 }
 
 ::-webkit-scrollbar {
@@ -240,12 +236,12 @@ i {
 }
 
 /*---------tracklist column-----------------*/
-.tracklist-n {
+.tracklist {
   height: 100vh;
   padding-left: 2rem;
   margin-left: 50px;
 }
-.track-container {
+.tracklist-container {
   width: 100%;
   overflow-y: scroll;
   height: 80vh;
@@ -282,11 +278,12 @@ li:nth-child(odd) {
   max-width: 500px;
   margin-bottom: 10px;
 }
-.album-n h4 {
+.AlbumPage-body > .container-fluid > .row > .col-lg-6 > .container h4 {
+  color: blue;
   letter-spacing: 1px;
 }
 
-.album-n {
+.AlbumPage-body > .container-fluid > .row > .col-lg-6 .container .album {
   display: flex;
   color: white;
   justify-content: center;
@@ -296,8 +293,7 @@ li:nth-child(odd) {
   height: 100vh;
   margin-left: 250px;
 }
-
-.album-index p {
+.AlbumPage-body > .container-fluid > .row > .col-lg-6.album p {
   margin-top: 10px;
   color: #5d5d5d;
   font-size: 12px;
@@ -305,7 +301,7 @@ li:nth-child(odd) {
 }
 
 /*"play now button*/
-.album-n button {
+.AlbumPage-body > .container-fluid > .row > .col-lg-6.album button {
   margin-top: 10px !important;
   width: 130px !important;
   margin: 0 auto;
@@ -353,11 +349,11 @@ li:nth-child(odd) {
 }
 
 @media screen and (max-width: 767px) {
-  .body-n {
+  .body-index {
     padding-right: 0px;
   }
 
-  .tracklist-n {
+  .tracklist-index {
     padding-left: 10px;
     margin-left: 0px;
     font-size: 2rem !important;

@@ -25,20 +25,20 @@ function fetchHomePageAlbums() {
     .then((albumsDataHomePage) => {
       dataHomePage = albumsDataHomePage.data;
       console.log(albumsDataHomePage);
-      displayArtists();
+      loadHomePageAlbums();
     })
     .catch((err) => console.error(err.message));
 }
 
-const displayArtists = () => {
+const loadHomePageAlbums = () => {
   dataHomePage.slice(0, 6).forEach(
     (album) =>
       (selectAlbumCard.innerHTML += `
-  <img src="${album.artist.picture_big}" />
-  <div class="card-body">
-    <h5>${album.title}</h5>
-    <h6 class="text-muted">${album.artist.name}</h6>
-  </div>
+      <img src="${album.artist.picture_big}" />
+      <div class="card-body">
+        <h5>${album.title}</h5>
+        <h6 class="text-muted">${album.artist.name}</h6>
+      </div>
 `)
   );
   thisIsRow.appendChild(selectAlbumCard);
@@ -47,20 +47,36 @@ const displayArtists = () => {
 /*-----------------------------------------------------------------------------------*/
 /* SEARCH FUNCTION */
 
-const searchButtonFun = () => {
+const spinnerS = document.querySelector("spinner-border");
+
+let query = localStorage.getItem("query")
+  ? localStorage.getItem("query")
+  : "daft punk";
+/*^^^^ WORKS ^^^*/
+
+const handleSearchQuery = (event) => {
+  query = event.target.value.toLowerCase();
+  if (event.key === "Enter" && event.target.value.length > 3) {
+    searchButtonFun();
+  }
+  localStorage.setItem("query", query);
+};
+
+const searchButtonFun = (q = query) => {
   const divRow = document.querySelector(".row.thisrow");
-  divRow.innerHTML = "";
-  const searchInput = document.getElementById("search-input").value;
-  fetch(
-    `https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchInput}`
-  )
+  searchPageRow2.innerHTML = "";
+  searchPageRow.innerHTML = "";
+  // spinnerS.classList.add("d-none");
+  const query = document.getElementById("input-SearchPage").value;
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${q}`)
     .then((res) => res.json())
-    .then((data) => loadAlbums(data.data))
+    .then((data) => loadSearchResults(data.data))
     .catch((error) => alert(error));
 };
 
-const loadAlbums = (newData) => {
-  const divRow = document.querySelector(".row.thisrow");
+const searchPageRow2 = document.querySelector(".SearchPage-body>.row.thisrow2");
+const loadSearchResults = (newData) => {
+  const searchPageRow = document.querySelector(".SearchPage-body>.row.thisrow");
   newData.forEach((element) => {
     divRow.innerHTML += `
     <div id="this_card" class="card" style="width: 14rem">
@@ -83,39 +99,43 @@ const loadAlbums = (newData) => {
   });
 };
 
+/*------------------------------------------------------------------------------------*/
+/*--------------AlbumPage*/
+
 // const trackList = document.getElementById("tracks");
 // const imageContainer = document.getElementById("album-image-container");
 
-// let albums = [];
+// let dataAlbumPage = [];
 // let albumstest = [];
 // const endpoint =
 //   "https://striveschool-api.herokuapp.com/api/deezer/album/7766062";
-// function loadAlbums() {
+
+// function fetchAlbumData() {
 //   fetch(endpoint) //address endpoint
 //     .then((response) => response.json()) //
-//     .then((_albums) => {
-//       albums = _albums.tracks.data;
-//       albumstest = _albums;
-//       console.log(_albums);
-//       displayAlbums();
-//       displayAlbumImage();
+//     .then((jsonData) => {
+//       dataAlbumPage = jsonData.tracks.data;
+//       albumstest = jsonData;
+//       console.log(jsonData);
+//       loadAlbums();
+//       // displayAlbumImage();
 //     })
 //     // .then( countSongs())
 
 //     .catch((err) => console.log(err));
 // }
 
-// function displayAlbums() {
-//   albums.forEach(
+// // function displayAlbums() {}
+// function loadAlbums() {
+//   const getImg = document.querySelector("album-image-container>img");
+//   // getImg.i
+//   dataAlbumPage.forEach(
 //     (album) =>
 //       (trackList.innerHTML += `
 //       <li><span class="fa-li"><i class="fas fa-music"></i></span></i>${album.title} You</li>
 //         <li>${album.artist.name}</li>`)
 //   );
-// }
-// function displayAlbumImage() {
-//   const getImg = document.querySelector("album-image-container>img");
-//   // getImg.i
+
 //   console.log(albumstest.cover_big);
 //   imageContainer.innerHTML = "";
 //   imageContainer.innerHTML += `<div id="album-image-container" class="container m-0 p-1">

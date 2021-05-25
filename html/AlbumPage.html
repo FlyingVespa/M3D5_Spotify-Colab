@@ -22,17 +22,17 @@
   <link rel="stylesheet" href="../assets/css/login.css" />
   <title>AlbumPage | Spotify</title>
 </head>
-
-<body class="body-AlbumPage">
+<body class="AlbumPage-body">
  <navbar></navbar>
+
   <div class="container-fluid m-0 p-0">
     <div class="row mt-5">
-      <div class="col-lg-6 col-md-6 album-n">
+      <div class="col-lg-6 col-md-6 album">
         <div id="album-image-container" class="container m-0 p-1">
           <img src="../assets/images/album-images/beatles-hey-jude-album.jpg" id="img-album-index" alt="" />
           <h4>Greatest Hits Collection (First Edition)</h4>
           <p>Beatles</p>
-          <button class="btn btn-success btn-n">PLAY</button>
+          <button class="btn btn-success btn-index" onclick="fetchAlbumData()">Fetch</button>
           <p>1970 &#8226 16 SONGS</p>
           <div>
             <span class="fa-stack mb-2" id="toggle">
@@ -43,26 +43,77 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-5 col-md-5 tracklist-n">
-        <div class="track-container">
-          <!-- track lists is appended below -->
-          <ul id="tracks" class="fa-ul">
-           
+      <div class="col-lg-5 col-md-5 tracklist">
+        <div class="tracklist-container">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>She Loves You</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>From Me to You </li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>We Can Work It Out </li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Help!</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Michelle</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Yesterday</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>I Feel Fine - Example of Long Text With No
+              Meaning Extra Extra</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Yellow Submarine - Example of Long Text With
+              No
+              Meaning Extra Extra</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Can't Buy Me Love</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Bad Boy</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Day Tripper</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>A Hard Day's Night - Example of Long Text
+              With
+              No Meaning Extra Extra</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Ticket To Ride - Example of Long Text With No
+              Meaning</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Paperback Writer - Example of Long Text With
+              No
+              Meaning</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Eleanor Rigby</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>I Want to Hold Your Hand - Example of Long
+              Text
+              With No Meaning</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Ticket To Ride</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Paperback Writer - Example of Long Text With
+              No
+              Meaning</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Eleanor Rigby</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>I Want to Hold Your Hand - Example of Long
+              Text
+              With No Meaning</li>
+            <li>Beatles</li>
+            <li><span class="fa-li"><i class="fas fa-music"></i></span></i>Ticket To Ride</li>
+            <li>Beatles</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
   <script>
-
   
   </script>
   <script src="../main.js"></script>
-
-  <script>
-
-  </script>
-
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
